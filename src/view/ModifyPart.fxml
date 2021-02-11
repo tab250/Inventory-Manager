@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyPartController">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="Modify Part">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="InHouseRadioBtn" layoutX="163.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#compNameToMachID" selected="true" text="In-House">
+            <toggleGroup>
+                <ToggleGroup fx:id="InOrOut" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="OutSourcedRadioBtn" layoutX="295.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#machIDToCompName" text="Outsourced" toggleGroup="$InOrOut" />
+        <Label layoutX="200.0" layoutY="223.0" text="Min" />
+        <TextField fx:id="ModPartNameTxt" layoutX="108.0" layoutY="102.0" />
+        <TextField fx:id="ModPartInvTxt" layoutX="108.0" layoutY="140.0" />
+        <TextField fx:id="ModPartPCTxt" layoutX="108.0" layoutY="180.0" />
+        <TextField fx:id="ModPartMachCompTxt" layoutX="108.0" layoutY="250.0" />
+        <TextField fx:id="ModPartIDTxt" editable="false" layoutX="108.0" layoutY="66.0" />
+        <TextField fx:id="ModPartMaxTxt" layoutX="63.0" layoutY="218.0" prefWidth="125.0" />
+        <TextField fx:id="ModPartMinTxt" layoutX="244.0" layoutY="218.0" prefWidth="125.0" />
+        <Button fx:id="ModPartSaveBtn" layoutX="229.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#modPartSave" text="Save" />
+        <Button fx:id="ModPartCancelBtn" layoutX="311.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#modPartCancel" text="Cancel" />
+        <VBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="66.0" prefHeight="215.0" prefWidth="96.0" spacing="20.0">
+            <Label text="ID" />
+            <Label text="Name" />
+            <Label text="Inv" />
+            <Label text="Price/Cost" />
+            <Label text="Max" />
+            <Label fx:id="MachIDCompName" text="Machine ID" />
+        </VBox>
+    </children>
+</AnchorPane>
